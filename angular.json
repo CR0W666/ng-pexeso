@@ -123,6 +123,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "ng-pexeso"
+    }
+  },
+  "defaultProject": "ng-pexeso",
+  "cli": {
+    "analytics": "02db8609-8706-494c-b769-45c5c89e8b84"
+  }
 }
