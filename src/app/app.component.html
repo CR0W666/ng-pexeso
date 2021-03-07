@@ -8,7 +8,13 @@
   <form (ngSubmit)="startGame()" class="d-flex flex-column bg-white border rounded p-4 shadow-sm" #form="ngForm">
     <label for="pairs">Number of pairs:*</label>
     <input id="pairs" type="number" class="form-control mb-2" [(ngModel)]="numberOfPairs" name="pairs"
-           placeholder="Insert number of pairs" aria-label="pairs" aria-describedby="pairs-label">
-    <button class="btn btn-primary align-self-stretch">Start</button>
+           placeholder="Insert number of pairs" aria-label="pairs" aria-describedby="pairs-label" required [appMin]="4" [appMax]="9" #numberEl="ngModel">
+    <button [disabled]="form.invalid" class="btn btn-primary align-self-stretch">Start</button>
+    <span *ngIf="numberEl.errors.min" id="minLength">
+      Minimální číslo párů jsou 4
+    </span>
+    <span *ngIf="numberEl.errors.max" id="maxLength">
+      Maximální číslo párů je 9
+    </span>
   </form>
 </div>
